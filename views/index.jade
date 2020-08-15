@@ -1,0 +1,21 @@
+extends layout
+
+block extra-links
+    link(rel='stylesheet', href='/css/jke-d3-ecg.css')
+
+block content
+    .container
+        .jke-ecgChart.center-align
+
+        .row.center-align(style='height:220;width:800')
+            .col.s3.offset-s3
+                a.waves-effect.waves-light.btn-large(href="/checker-list") Checker List!
+            .col.s3
+                a.waves-effect.waves-light.btn-large(href="/checker-editor") Create Checker!
+
+
+block extra-scripts
+    script(src='/javascripts/jquery-ui-widget.min.js')
+    script(src='/javascripts/d3.min.js')
+    script(src='/javascripts/jke-d3-ecg.min.js')
+    script(src='/javascripts/module/index/index.js')

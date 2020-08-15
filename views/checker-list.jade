@@ -1,0 +1,43 @@
+extends layout
+
+block content
+    div
+        a.waves-effect.waves-light.btn(href="/checker-editor") Create Checker
+
+    table.highlight
+        thead
+            tr
+                th
+                th URL
+                th Status
+                th
+        tbody
+        each c in checkers
+            tr
+                td= c.title
+                td= c.url
+                td
+                    if c.is_enabled
+                        if c.is_healthy
+                            i.material-icons.green-text verified_user
+                        else
+                            i.material-icons.red-text warning
+                    else
+                        i.material-icons.yellow-text not_interested
+                td
+                    a(href='/checker/'+c.id) Execution history
+
+    .container
+        ul.pagination
+            li.disabled
+                a(href="#!")
+                    i.material-icons chevron_left
+            li.active.teal.darken-3
+                a(href="#!") 1
+            li.waves-effect
+                a(href="#!") 2
+            li.waves-effect
+                a(href="#!") 3
+            li.waves-effect
+                a(href="#!")
+                    i.material-icons chevron_right

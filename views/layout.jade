@@ -1,0 +1,29 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/css/materialize.css')
+    link(rel='stylesheet', href='https://fonts.googleapis.com/icon?family=Material+Icons')
+    link(rel='stylesheet', href='/css/homepage.css')
+    link(rel='stylesheet', href='/css/sweetalert.css')
+    block extra-links
+  body
+    header
+      nav.nav-wrapper.teal.darken-3
+        a.brand-logo Health Check
+        ul.right.hide-on-med-and-down
+          li
+            a(href="/") Homepage
+          li
+              a(href="/checker-list") Checker List
+          li
+            a(href="/help") Help
+    main
+      block content
+
+
+script(src='/javascripts/jquery-1.11.1.min.js')
+script(src='/javascripts/materialize.min.js')
+script(src='/javascripts/sweetalert.min.js')
+
+block extra-scripts

@@ -1,0 +1,28 @@
+extends layout
+
+block extra-links
+    link(rel='stylesheet', href='/css/editor.css')
+
+block content
+    .container.z-depth-1(style='margin-top:30px;padding:20px;')
+        .row
+            .input-field.col.s12
+                input#title(type='text')
+                label(for='title') Title
+        .row
+            .col.s12.input-field
+                input#url(type='text')
+                label(for='url') URL
+        .row
+            .col.s12.input-field
+                select#frequency
+                    option(value='one-min') 1-min
+                    option(value='five-min') 5-min
+                    option(value='fifteen-min') 15-min
+                    option(value='one-hour') 1-hour
+                label Check frequency
+        button#create.waves-effect.waves-light.btn Create Checker
+
+
+block extra-scripts
+    script(src='/javascripts/module/editor/editor.js')
